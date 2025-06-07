@@ -41,10 +41,10 @@ const salad = [
 
 // ------------------------ Copy array in JS ------------------------
 // 1) SLICE():
-const saladCopy = salad.slice();
-console.log('Salad before copy', salad);
-console.log('Salad after copy', saladCopy);
-console.log(saladCopy === salad); // false: they are 2 different arrays although the content are same
+// const saladCopy = salad.slice();
+// console.log('Salad before copy', salad);
+// console.log('Salad after copy', saladCopy);
+// console.log(saladCopy === salad); // false: they are 2 different arrays although the content are same
 
 // 2) isArray(X):
 // Array.isArray([
@@ -62,3 +62,63 @@ console.log(saladCopy === salad); // false: they are 2 different arrays although
 
 // const arr = [1, 2, 3, 4];
 // Array.isArray(arr);
+
+// ------------------------ ARRAY DESTRUCTURING ------------------------
+// const [car, bike, ship, plane] = [
+//   'lamborghini Adventador ',
+//   'Yamaha R1',
+//   'Titanic',
+//   'F22-Raptor',
+// ];
+// console.log(car, bike, ship, plane);
+
+// const [car1, bike1 = 'Honda CBR1000'] = ['Lamborghini'];
+// console.log(car1, bike1);
+
+// ------------------------ NESTED ARRAY ------------------------
+// const random = [1, 2, 'b', ['a', 6, 'main']];
+// // Array destructuring. Objective: we have to select 'main'
+// random[3][2];
+
+// ------------------------  (...REST): goes with variables | (SPREAD...): goes with arrays values, clone/copy existing array ------------------------
+//REST
+// const [apple, pears, ...rest] = ['🍎', '🍐', '🍇', '🥭', '🥑', '🍊'];
+// console.log(
+//   '...REST:',
+//   'Apple:',
+//   apple,
+//   'Pears:',
+//   pears,
+//   'Other remaining fruits:',
+//   rest
+// );
+
+//SPREAD
+// const mySalad = ['🍎', '🍐', '🍇', '🥭', '🥑', '🍊'];
+// const mySaladCopy = [...mySalad];
+// console.log('SPREAD...:', mySaladCopy);
+
+// ------------------------ Swapping values with Destructuring ------------------------
+// let first = '😀';
+// let second = '🤪';
+
+// let [newFirst, newSecond] = [second, first];
+// console.log('New First:', newFirst, 'New Second:', newSecond);
+
+// ------------------------ Merge two Array and create one single Array ------------------------
+// const emotions = ['😃', '😇'];
+// const veggies = ['🍇', '🍉', '🍓', '🫐'];
+// const newArray = [...emotions, ...veggies];
+// console.log('New Array is:', newArray);
+
+// ------------------------ LENGTH property in JS ------------------------
+// const arr1 = [7, 74, 98, 35];
+// console.log(arr1.length);
+
+// An Array can hold upto 2^32 -1 elements i.e, 4294967295 elements
+
+// arr1.length = 2;
+// console.log(arr1);
+
+// ------------------------ ARRAY METHODS ------------------------
+// 1) concat(): merges one or more array and return merged array
