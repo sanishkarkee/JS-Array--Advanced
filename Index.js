@@ -160,10 +160,22 @@ const salad = [
 // console.log('After default sorting:', names.sort()); // By default it sorts in Ascending order
 
 // ✅ 9) splice(): delete, add, modify elements in an array ,from any index in an array
-const names = ['tom', 'alex', 'bob'];
-console.log('Output of splice:', names.splice(0, 1, 'john')); // ['tom'] : 'tom' gets deleted from the array ,so the deleted array is returned
-console.log('Original array becomes:', names); // ['john', 'alex', 'bob']
+// const names = ['tom', 'alex', 'bob'];
+// console.log('Output of splice:', names.splice(0, 1, 'john')); // ['tom'] : 'tom' gets deleted from the array ,so the deleted array is returned
+// console.log('Original array becomes:', names); // ['john', 'alex', 'bob']
 
-console.log(names.splice(1, 0, 'Zack')); // OP: ["tom",'zack', 'alex', 'bob']
+// console.log(names.splice(1, 0, 'Zack')); // OP: ["tom",'zack', 'alex', 'bob']
 
-names.splice();
+// console.log(names.splice(2, 1, 'zack')); //OP: ['bob']
+// console.log(names); // OP: ['tom','alex','zack']
+
+// 10) at(): retrieve elements using both positive and negetive indexes. Left-right: 0, 1, 2...  |  Right-left: -1, -2, ........
+const junkFoodILove = ['🥪', '🍔', '🍕', '🌭', '🥞', '🌯', '🌮', '🍿'];
+
+// If you want to retrieve 'popcorn"
+console.log(junkFoodILove.at(0)); // 🥪
+console.log(junkFoodILove.at(3)); // 🌭
+console.log(junkFoodILove.at(-1)); //🍿
+console.log(junkFoodILove.at(-5)); // 🌭
+console.log(junkFoodILove.at(-8)); // 🥪
+console.log(junkFoodILove.at(-12)); // undefined
