@@ -191,19 +191,42 @@ const salad = [
 
 // ------------------------ Grouping data in an ARRAY ------------------------
 // there are different types of data ,but assume objects inside array
-let students = [
-  { name: 'Tom', age: 10, dept: 'Engineering', salary: 5000 },
-  { name: 'Alex', age: 12, dept: 'HR', salary: 3000 },
-  { name: 'Sara', age: 11, dept: 'Engineering', salary: 7000 },
-  { name: 'John', age: 68, dept: 'Engineering', salary: 1000 },
-  { name: 'Bob', age: 46, dept: 'Sales', salary: 6000 },
-];
+// let students = [
+//   { name: 'Tom', age: 10, dept: 'Engineering', salary: 5000 },
+//   { name: 'Alex', age: 12, dept: 'HR', salary: 3000 },
+//   { name: 'Sara', age: 11, dept: 'Engineering', salary: 7000 },
+//   { name: 'John', age: 68, dept: 'Engineering', salary: 1000 },
+//   { name: 'Bob', age: 46, dept: 'Sales', salary: 6000 },
+// ];
 
-const groupedByDept = Object.groupBy(students, ({ dept }) => dept);
-console.log(groupedByDept);
+// const groupedByDept = Object.groupBy(students, ({ dept }) => dept);
+// console.log(groupedByDept);
 
 // we can group by condition: based on salary 5000
-const groupedByMoreThan5000 = Object.groupBy(students, ({ salary }) => {
-  return salary >= 5000 ? 'More than 5000' : ' Less than 5000';
-});
-console.log(groupedByMoreThan5000);
+// const groupedByMoreThan5000 = Object.groupBy(students, ({ salary }) => {
+//   return salary >= 5000 ? 'More than 5000' : ' Less than 5000';
+// });
+// console.log(groupedByMoreThan5000);
+
+// ------------------------ IMMUTUABILITY ------------------------
+// we dont directly change tha data in Array,Objects, Variables directly, instead we make copy of it and make changes to the copy. Yedi project ma 'STATE , REDUX' ko concept use gareko xa bhane IMMUTUABILITY ko concept use garnu parxa. 👉 General habit is: ✅ For shared data / state → immutable ✅ For local temporary data → mutable is okay if safe
+
+// 1) toReversed(): reverse elements of an array but with IMMUTUABILITY
+// const items = [1, 2, 3];
+
+// const copyItems = items.toReversed();
+// console.log(copyItems); // [3, 2, 1]  | making copy of original array here
+// console.log(items); // [1, 2, 3]
+
+// 2) toSorted():  sort the order of the elements of an array but with IMMUTUABILITY
+// const months = ['Jan', 'Feb', 'Mar', 'Apr'];
+
+// const sortedMonths = months.toSorted();
+// console.log(sortedMonths); // ['Apr', 'Feb', 'Jan', 'Mar']
+// console.log(months); // ['Jan', 'Feb', 'Mar', 'Apr']
+
+// 3) toSpliced(): array elements lai modify garna but with IMMUTUABILITY
+const months = ['Jan', 'Mar', 'Apr', 'May'];
+const splicedMonths = months.toSpliced(1, 0, 'Feb');
+console.log('Spliced months:', splicedMonths); // ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+console.log('Original months:', months); // ['Jan', 'Mar', 'Apr', 'May']
