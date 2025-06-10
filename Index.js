@@ -226,7 +226,13 @@ const salad = [
 // console.log(months); // ['Jan', 'Feb', 'Mar', 'Apr']
 
 // 3) toSpliced(): array elements lai modify garna but with IMMUTUABILITY
-const months = ['Jan', 'Mar', 'Apr', 'May'];
-const splicedMonths = months.toSpliced(1, 0, 'Feb');
-console.log('Spliced months:', splicedMonths); // ['Jan', 'Feb', 'Mar', 'Apr', 'May']
-console.log('Original months:', months); // ['Jan', 'Mar', 'Apr', 'May']
+// const months = ['Jan', 'Mar', 'Apr', 'May'];
+// const splicedMonths = months.toSpliced(1, 0, 'Feb');
+// console.log('Spliced months:', splicedMonths); // ['Jan', 'Feb', 'Mar', 'Apr', 'May']
+// console.log('Original months:', months); // ['Jan', 'Mar', 'Apr', 'May']
+
+// 4) with(): It lets you change ONE item/element in an array without changing the original array.
+const numbers = [2, 7, 34, 87, 48];
+const withNumber = numbers.with(1, 'Ram');
+console.log('Modified Array:', withNumber);
+console.log('Original Array:', numbers);
