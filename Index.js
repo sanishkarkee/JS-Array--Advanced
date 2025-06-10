@@ -169,13 +169,41 @@ const salad = [
 // console.log(names.splice(2, 1, 'zack')); //OP: ['bob']
 // console.log(names); // OP: ['tom','alex','zack']
 
-// 10) at(): retrieve elements using both positive and negetive indexes. Left-right: 0, 1, 2...  |  Right-left: -1, -2, ........
-const junkFoodILove = ['🥪', '🍔', '🍕', '🌭', '🥞', '🌯', '🌮', '🍿'];
+// 10) **Didnt understand **  at(): retrieve elements using both positive and negetive indexes. Left-right: 0, 1, 2...  |  Right-left: -1, -2, ........
+// const junkFoodILove = ['🥪', '🍔', '🍕', '🌭', '🥞', '🌯', '🌮', '🍿'];
 
 // If you want to retrieve 'popcorn"
-console.log(junkFoodILove.at(0)); // 🥪
-console.log(junkFoodILove.at(3)); // 🌭
-console.log(junkFoodILove.at(-1)); //🍿
-console.log(junkFoodILove.at(-5)); // 🌭
-console.log(junkFoodILove.at(-8)); // 🥪
-console.log(junkFoodILove.at(-12)); // undefined
+// console.log(junkFoodILove.at(0)); // 🥪
+// console.log(junkFoodILove.at(3)); // 🌭
+// console.log(junkFoodILove.at(-1)); //🍿
+// console.log(junkFoodILove.at(-5)); // 🌭
+// console.log(junkFoodILove.at(-8)); // 🥪
+// console.log(junkFoodILove.at(-12)); // undefined
+
+// 11) flat(): Array bhitra ko array ko content lai single array ma show garna. array bhitra multiple arrays xa bhane .flat() le euta array remove garna help garxa, so sabai array hatauna xa bhane jati ota array xa teti ota nai .flat() use garna parxa
+// const arr1 = [1, 2, 3, 4, [5, 6, 7]];
+// console.log(arr1.flat()); // [1, 2, 3, 4, 5, 6, 7];
+
+// const arr2 = [0, 1, [2, [3, [4, 5]]]];
+// console.log(arr2.flat().flat().flat()); // [0, 1, 2, 3, 4, 5]
+// OR
+// console.log(arr2.flat(Infinity));
+
+// ------------------------ Grouping data in an ARRAY ------------------------
+// there are different types of data ,but assume objects inside array
+let students = [
+  { name: 'Tom', age: 10, dept: 'Engineering', salary: 5000 },
+  { name: 'Alex', age: 12, dept: 'HR', salary: 3000 },
+  { name: 'Sara', age: 11, dept: 'Engineering', salary: 7000 },
+  { name: 'John', age: 68, dept: 'Engineering', salary: 1000 },
+  { name: 'Bob', age: 46, dept: 'Sales', salary: 6000 },
+];
+
+const groupedByDept = Object.groupBy(students, ({ dept }) => dept);
+console.log(groupedByDept);
+
+// we can group by condition: based on salary 5000
+const groupedByMoreThan5000 = Object.groupBy(students, ({ salary }) => {
+  return salary >= 5000 ? 'More than 5000' : ' Less than 5000';
+});
+console.log(groupedByMoreThan5000);
