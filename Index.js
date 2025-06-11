@@ -187,7 +187,7 @@ const salad = [
 // const arr2 = [0, 1, [2, [3, [4, 5]]]];
 // console.log(arr2.flat().flat().flat()); // [0, 1, 2, 3, 4, 5]
 // OR
-// console.log(arr2.flat(Infinity));
+// console.log(arr2.flat(Impornfinity));
 
 // ------------------------ Grouping data in an ARRAY ------------------------
 // there are different types of data ,but assume objects inside array
@@ -232,7 +232,30 @@ const salad = [
 // console.log('Original months:', months); // ['Jan', 'Mar', 'Apr', 'May']
 
 // 4) with(): It lets you change ONE item/element in an array without changing the original array.
-const numbers = [2, 7, 34, 87, 48];
-const withNumber = numbers.with(1, 'Ram');
-console.log('Modified Array:', withNumber);
-console.log('Original Array:', numbers);
+// const numbers = [2, 7, 34, 87, 48];
+// const withNumber = numbers.with(1, 'Ram');
+// console.log('Modified Array:', withNumber);
+// console.log('Original Array:', numbers);
+
+// ------------------------ ARRAY-LIKE ------------------------
+// Array-like: It is an OBJECT that has some behaviour like array, it has an index to access an element. " when you want to use elements of Array-like then , WE HAVE TO CONVERT Array-like TO AN ARRAY"
+
+// const arr_like = { 0: 'r', 1: 'am', 2: 'array-like', length: 3 };
+// console.log(arr_like);
+
+// console.log(arr_like[2]); // OP: array-like
+// console.log(arr_like.length); // OP: 3
+
+// console.log('Is arr_like is an Array?', Array.isArray(arr_like)); // OP: false
+
+function checkArgs() {
+  console.log(arguments);
+  console.log([...arguments, Array.isArray([...arguments])]); // converting array-like to an array , METHOD 1: Using spread operator ,and checking if its an array
+}
+checkArgs(1, 2);
+
+// Method 2: Converting array-like to Array
+console.log('HTML collection as an Array', document.getElementsByTagName('li'));
+
+const collectionArr = Array.from(document.getElementsByTagName('li'));
+console.log('Converted Array', collectionArr, Array.isArray(collectionArr));
