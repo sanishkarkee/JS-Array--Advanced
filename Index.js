@@ -248,14 +248,25 @@ const salad = [
 
 // console.log('Is arr_like is an Array?', Array.isArray(arr_like)); // OP: false
 
-function checkArgs() {
-  console.log(arguments);
-  console.log([...arguments, Array.isArray([...arguments])]); // converting array-like to an array , METHOD 1: Using spread operator ,and checking if its an array
-}
-checkArgs(1, 2);
+// function checkArgs() {
+//   console.log(arguments);
+//   console.log([...arguments, Array.isArray([...arguments])]); // converting array-like to an array , METHOD 1: Using spread operator ,and checking if its an array
+// }
+// checkArgs(1, 2);
 
 // Method 2: Converting array-like to Array
-console.log('HTML collection as an Array', document.getElementsByTagName('li'));
+// console.log('HTML collection as an Array', document.getElementsByTagName('li'));
 
-const collectionArr = Array.from(document.getElementsByTagName('li'));
-console.log('Converted Array', collectionArr, Array.isArray(collectionArr));
+// const collectionArr = Array.from(document.getElementsByTagName('li'));
+// console.log('Converted Array: ', collectionArr, Array.isArray(collectionArr)); // OP: Converted Array :  [li, li, li, li, li, li, li, li, li, li] true
+
+// ------------------------ Array.of() ------------------------
+//Used to create Array
+// const a = new Array(2, 3, 4); // [2, 3, 4]
+// const b = [4, 5, 6];
+
+// const c = Array.of(2, true, 'test', { name: 'Alex' }, [1, 2, 3]);
+
+// ------------------------ Array Iterators(Loop) Methods ------------------------
+
+// 1) Filter(): Creates new Array with elements that pass a condition
