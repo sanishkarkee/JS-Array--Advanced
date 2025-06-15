@@ -269,4 +269,117 @@ const salad = [
 
 // ------------------------ Array Iterators(Loop) Methods ------------------------
 
-// 1) Filter(): Creates new Array with elements that pass a condition
+// 1) FILTER(): Creates new Array with elements that pass a condition
+let customers = [
+  {
+    id: 1,
+    f_name: 'Abby',
+    l_name: 'Thomas',
+    gender: 'M',
+    married: true,
+    age: 32,
+    expense: 500,
+    purchased: ['Shampoo', 'Toys', 'Book'],
+  },
+  {
+    id: 2,
+    f_name: 'Jerry',
+    l_name: 'Tom',
+    gender: 'M',
+    married: true,
+    age: 64,
+    expense: 100,
+    purchased: ['Stick', 'Blade'],
+  },
+  {
+    id: 3,
+    f_name: 'Dianna',
+    l_name: 'Cherry',
+    gender: 'F',
+    married: true,
+    age: 22,
+    expense: 1500,
+    purchased: ['Lipstik', 'Nail Polish', 'Bag', 'Book'],
+  },
+  {
+    id: 4,
+    f_name: 'Dev',
+    l_name: 'Currian',
+    gender: 'M',
+    married: true,
+    age: 82,
+    expense: 90,
+    purchased: ['Book'],
+  },
+  {
+    id: 5,
+    f_name: 'Maria',
+    l_name: 'Gomes',
+    gender: 'F',
+    married: false,
+    age: 7,
+    expense: 300,
+    purchased: ['Toys'],
+  },
+];
+
+// const adults = users.filter((usersElement) => {
+//   return usersElement.age >= 18;
+// });
+
+// console.log(adults); // [{...}, {...}]
+
+// 2) MAP(): Creates a new array by applying a function  to each element
+// let customerWithFullName = customers.map((arrayElements) => {
+//   let title = '';
+//   if (arrayElements.gender === 'M') {
+//     title = ' Mr.';
+//   } else if (arrayElements.gender === 'F' && arrayElements.married) {
+//     title = 'Mrs.';
+//   } else {
+//     title = 'Miss.';
+//   }
+
+//   arrayElements[
+//     'Full_Name'
+//   ] = `${title} ${arrayElements.f_name} ${arrayElements.l_name}`;
+
+//   return arrayElements;
+// });
+
+// console.log('New Array after adding full name: ', customerWithFullName);
+
+// 3) REDUCE(): Reduce the value of an element of an array into an single value.
+//  QUESTION 1: The average age of the customers who have purchased the item, 'Book'
+
+// function reducer(accumulator, currentValue, index, array) {
+//   // do something with accumulator and currentValue
+//   // you get result
+//   // you return the result
+// }
+// Yaha bata return bhayeko RESULT value, next element ko lagi 'ACCUMULATOR' ma store bhayera BaseAudioContext, initially chai 'ACCUMULATOR' ma chai 'INITIALVALUE' stored hunxa.
+
+// Example 1:
+// const arr = [1, 2, 3, 4, 5];
+
+// const result = arr.reduce((accumulator, currentValue) => {
+//   return accumulator + currentValue;
+// }, 0);
+
+// console.log(result); // OP: 15
+
+// QUESTION 1: Solution => initial value 0 kina ? hamile average age nikalnu xa jun number ma hunxa so ZERO(0) leko ho
+// let count = 0; // to find out how may customers purchased book
+// const total = customers.reduce((accumulator, customers) => {
+//   if (customers.purchased.includes('Book')) {
+//     accumulator = accumulator + customers.age;
+//     count = count + 1;
+//   }
+//   return accumulator;
+// }, 0);
+
+// console.log(
+//   'Average age of customer that brought books is:',
+//   Math.floor(total / count),
+//   'years.'
+// );
